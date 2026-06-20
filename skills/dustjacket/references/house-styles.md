@@ -1,8 +1,14 @@
 # House styles by repo type
 
-Per-type skeleton, signature devices, default voice, and emoji/visual stance — extracted from a
-verbatim analysis of exemplar READMEs (see `docs/research.md` in this repo for the full corpus). Apply
-the section that matches the detected type. The cross-type rules at the bottom hold for every type.
+Signature devices, default voice, and emoji/visual stance per type — extracted from a verbatim
+analysis of exemplar READMEs (see `docs/research.md` for the full corpus). Apply the section that
+matches the detected type. The cross-type rules at the bottom hold for every type.
+
+> **Layout is owned by the format, not the type.** Section ordering and length come from the chosen
+> format (`references/formats.md`); this file supplies the *devices and assets* each type can show
+> (a CLI's demo GIF, a product's hero, a content repo's index). Where a per-type "skeleton" below and
+> the format disagree on ordering, the format wins. Repo type only sets the *default* format
+> (`references/repo-types.md`).
 
 ---
 
