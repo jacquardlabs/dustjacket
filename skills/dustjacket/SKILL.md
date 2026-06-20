@@ -41,18 +41,25 @@ Follow these steps in order. Each references a file under `references/` — read
 
 1. **Detect the repo type** — CLI, library, framework, product, content, or plugin/skill. Apply `references/repo-types.md`.
    State your guess and confidence; if unsure, ask the user to confirm before proceeding.
-2. **Pick a voice** — default `technical-writer`. Apply `references/voice-modes.md`. Honor an explicit
-   user request; otherwise use the type's default voice and say which you chose.
-3. **Read the existing README and the repo.** Inventory every real claim, command, path, and code
+2. **Choose the format** — the layout-level axis. Default to the repo type's default format
+   (`references/repo-types.md`); honor an explicit user request. Apply `references/formats.md`. State the
+   choice and the alternatives: "Using **standard** (default for a library) — say the word for reference,
+   tutorial, landing, or minimal."
+3. **Pick a voice** — the tone axis, orthogonal to format. Default to the format's default voice
+   (`references/formats.md`); honor an explicit user request. Apply `references/voice-modes.md`; say which
+   you chose.
+4. **Read the existing README and the repo.** Inventory every real claim, command, path, and code
    sample. You will preserve these; you will not invent new ones (`references/fabrication.md`).
-4. **Restructure to the house style.** Apply the consensus skeleton and the type's section ordering and
-   signature devices from `references/prettify.md` and `references/house-styles.md`.
-5. **Strip the AI tells.** Apply `references/anti-slop.md` to every line — bans, requires, red flags.
-6. **Apply mechanical helpers** as the toggles allow — `references/helpers.md` and `references/toggles.md`.
-7. **Handle assets.** Scaffold the scriptable, coach the visual, verify code output — `references/assets.md`
+5. **Restructure to the format.** Lay out the chosen format's section ordering (`references/formats.md`),
+   using the type's devices and assets (`references/house-styles.md`) and the consensus spine in
+   `references/prettify.md`.
+6. **Strip the AI tells.** Apply `references/anti-slop.md` to every line — bans, requires, red flags.
+7. **Apply mechanical helpers** as the format and toggles allow — `references/helpers.md` and
+   `references/toggles.md` (emoji defaults from the format; overridable).
+8. **Handle assets.** Scaffold the scriptable, coach the visual, verify code output — `references/assets.md`
    and `references/verify-code.md`. Never reference an asset that doesn't exist; flag it instead.
-8. **Flag the gaps.** Any required section with no real source becomes a `> TODO:` note, never fiction.
-9. **Show a diff and get approval before writing.** Apply the output contract in `references/output.md`.
+9. **Flag the gaps.** Any required section with no real source becomes a `> TODO:` note, never fiction.
+10. **Show a diff and get approval before writing.** Apply the output contract in `references/output.md`.
 
 ## Quick reference
 
@@ -63,9 +70,10 @@ Follow these steps in order. Each references a file under `references/` — read
 
 ## Reference files
 
-- `references/repo-types.md` — detect the type from signals
-- `references/house-styles.md` — per-type skeleton, devices, default voice; cross-type rules
-- `references/voice-modes.md` — the four voices
+- `references/repo-types.md` — detect the type from signals; the type's default format
+- `references/formats.md` — the five formats (layout axis): minimal, standard, reference, tutorial, landing
+- `references/house-styles.md` — per-type devices and assets; cross-type rules
+- `references/voice-modes.md` — the four voices (tone axis)
 - `references/anti-slop.md` — the ban/require ruleset (discipline)
 - `references/fabrication.md` — the no-fabrication line (discipline)
 - `references/helpers.md` — theme-aware images, badges, details, callouts, TOC
