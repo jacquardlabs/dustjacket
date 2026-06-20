@@ -19,6 +19,23 @@ its category, drawing on a corpus of verbatim-analyzed exemplars across six repo
 - **Picks a voice:** technical-writer (default), product, friendly-OSS, or reference-manual.
 - **Never fabricates.** Missing sections become flagged TODOs, not invented marketing.
 
+## Voices
+
+The same project, four registers. dustjacket defaults to technical-writer; name another to switch. Each
+voice obeys the anti-slop ruleset, so even `product` sells with specifics, not "powerful" and "seamless."
+
+**technical-writer** (default): direct, specific, no hype.
+> An HTTP client for Python. Connection pooling, retries, and typed responses.
+
+**product**: benefit-first, confident.
+> Make HTTP requests that just work: pooled, retried, and typed out of the box.
+
+**friendly-OSS**: warm, contributor-inviting.
+> A friendly HTTP client for Python. Pooling and retries built in. PRs welcome.
+
+**reference-manual**: exhaustive, trusts the reader.
+> HTTP client for Python. Supports connection pooling, automatic retries (configurable backoff), and typed responses. See the API for the full option list.
+
 ## Install
 
 ```
