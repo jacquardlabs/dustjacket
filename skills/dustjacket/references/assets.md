@@ -1,6 +1,6 @@
 # Asset coaching
 
-The README devices that matter most — screenshots, demo GIFs, diagrams — are exactly the things the
+The README devices that matter most (screenshots, demo GIFs, diagrams) are exactly the things the
 skill must not fabricate. So split assets three ways by what the skill can honestly do:
 
 - **Scaffold** the scriptable (generate text the user runs to produce a real asset).
@@ -77,7 +77,7 @@ When an asset needs the user's eyes or environment, don't fake it — give a che
 | framework | banner; package table | `<picture>` banner once the image exists |
 | product | hero screenshot (light+dark); maybe a GIF | capture script + `<picture>` |
 | content | optional banner; the TOC is the "asset" | — |
-| plugin/skill | none — commands are the proof | — |
+| plugin/skill | none; commands are the proof | n/a |
 
 When an expected asset is missing, emit: `> TODO: add <asset> at docs/assets/ — scaffold written to
 scripts/...`. Flag, scaffold, never fake.

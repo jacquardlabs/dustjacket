@@ -176,6 +176,28 @@ def _manifest_meta(root: Path) -> tuple[str, str]:
     return "", ""
 
 
+def check_em_dashes(md: str) -> list[Finding]:
+    """Flag em-dash overuse — an AI tell. House rule: at most one aside per line.
+
+    Two or more em-dashes on a single line is a flourish (a double aside). Code
+    blocks are exempt. The softer "one per paragraph" guideline is a prettify-time
+    judgment call (see references/anti-slop.md); this catches the unambiguous case.
+    """
+    out: list[Finding] = []
+    in_code = False
+    for i, raw in enumerate(md.splitlines(), 1):
+        if raw.lstrip().startswith("```"):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        if raw.count("—") >= 2:
+            out.append(
+                Finding("warning", "em-dash", f"{raw.count('—')} em-dashes on one line — overuse reads as an AI tell.", i)
+            )
+    return out
+
+
 def check_urls(md: str, timeout: float = 5.0) -> list[Finding]:
     """Opt-in: HEAD each external URL. Network — off by default."""
     out: list[Finding] = []
@@ -205,6 +227,7 @@ def run_checks(readme: Path, root: Path, with_urls: bool) -> list[Finding]:
     findings += check_local_paths(md, root)
     findings += check_images(md, root)
     findings += check_metadata(md, root)
+    findings += check_em_dashes(md)
     if with_urls:
         findings += check_urls(md)
     order = {s: i for i, s in enumerate(reversed(SEVERITIES))}

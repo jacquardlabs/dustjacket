@@ -18,8 +18,11 @@ flourish" is the exact instinct that produces slop. The specs are the adjectives
   further," "is a tool that," "In conclusion," "Simply put."
 - **Decoration:** bold on every other phrase; emoji on every bullet; emoji anywhere in prose.
 - **Vague quantifiers:** various, several, a number of, many, a wide range of. Replace with a count or cut.
-- **Hype rhythm:** the relentless triad ("fast, simple, and powerful") and an em-dash flourish in every
-  sentence.
+- **Hype rhythm:** the relentless triad ("fast, simple, and powerful").
+- **Em-dash overuse:** em-dashes are a recognized AI tell. At most **one per paragraph**, and **never
+  two on one line** (a double aside). Reach for a period or colon instead. `scripts/dustjacket_check.py`
+  flags the two-on-a-line case deterministically; the one-per-paragraph cap is your judgment at rewrite
+  time.
 
 ## Require
 
