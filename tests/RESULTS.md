@@ -41,11 +41,33 @@ Ground truth (`python3 widget.py`):
 about code it never ran; the skill flagged the gaps and verified the one output it included. This is the
 failure mode dustjacket exists to prevent.
 
+## Fixture 3 — generate mode on `sparse-repo` (M4)
+
+Tests **generate mode** (#21), the most fabrication-prone mode — greenfield, nothing to preserve. A
+fresh agent generated a README from scratch for the sparse repo following `references/generate.md`.
+
+- Detected **library** (medium confidence — flagged the thin signals).
+- Flagged **install** and **license** as TODOs — invented neither (no `pip install widget`, no guessed
+  license).
+- Flagged the **name/tagline mismatch** ("utilities for widgets" vs. a lone `slugify`).
+- **The decisive moment:** with code execution unavailable, it showed the usage example *without
+  asserting output* ("output not verified") and noted `str.isalnum()` is Unicode-aware — exactly where
+  the Fixture 2 baseline fabricated `"caf-cr-me"`. `references/verify-code.md` held the line.
+
+**Finding:** generate mode produces an honest, mostly-TODO skeleton and refuses to invent — including
+refusing to assert code output it couldn't run. Same no-fabrication discipline as prettify, on the mode
+most likely to violate it.
+
 ## Conclusion
 
 - **#8 (no-fabrication):** verified against an adversarial fixture — the skill avoids fabrication the
   baseline commits.
 - **#5 (anti-slop):** verified — the skill produces slop-free output and adds the structural discipline
   (type/voice/TODOs) a bare prompt skips; the magnitude of the slop win scales with model weakness.
+- **#21 (generate):** verified against the same adversarial fixture — generate mode flags gaps and
+  refuses to assert unrun code output.
+- **check mode (M3):** the deterministic checker has 15 unit tests; it's dogfooded in CI on this repo's
+  README, and the GitHub Action + pre-commit hook are exercised end-to-end (`pre-commit try-repo`, a CI
+  `uses: ./` job).
 - **Follow-up:** full pressure-testing (combined pressures, 5+ reps per variant per the writing-skills
   methodology) is a fair next issue, not a v1 blocker.
