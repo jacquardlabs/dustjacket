@@ -120,7 +120,3 @@ it explains.
 as a markdown table or aligned bullets with one concrete claim per row; screenshots via the capture
 script from `references/assets.md` (scaffold if missing); structural emoji as section markers and
 table icons. No manual TOC (GitHub auto-generates one); prose is badge-free and emoji-free.
-
-## License
-
-Distributed under the MIT License (see `LICENSE` at the repository root).
