@@ -3,8 +3,7 @@
 A Claude Code skill that restyles a repository's README to its repo-type house style and a chosen
 voice — without fabricating anything.
 
-> **Status:** prettify mode is implemented (M0 + M1). `check` (drift gate) and `generate` are planned
-> — see the [milestones](https://github.com/jacquardlabs/dustjacket/milestones).
+> **Status:** all three modes are implemented — prettify, check, and generate.
 
 ## What it does
 
@@ -39,11 +38,30 @@ flags gaps as TODOs, and shows a diff for approval before writing.
 
 ## Modes
 
-| Mode | Job | Status |
-|------|-----|--------|
-| `prettify` | Restyle an existing README to the house style and chosen voice | available |
-| `check` | Read-only drift gate — fails CI when the README no longer matches reality | planned (M3) |
-| `generate` | Build a README from repo signals, interviewing for gaps | planned (M4) |
+| Mode | Job |
+|------|-----|
+| `prettify` | Restyle an existing README to the house style and chosen voice |
+| `check` | Read-only drift gate — fails CI when the README no longer matches reality |
+| `generate` | Build a README from repo signals, interviewing for gaps |
+
+## Drift checking in CI
+
+`check` is a read-only gate. Run it locally or wire it into CI:
+
+```bash
+python scripts/dustjacket_check.py README.md
+```
+
+As a GitHub Action:
+
+```yaml
+- uses: jacquardlabs/dustjacket@v1
+  with:
+    readme: README.md
+    threshold: error
+```
+
+Or as a [pre-commit](https://pre-commit.com) hook (`.pre-commit-hooks.yaml` provides `dustjacket-check`).
 
 ## Documentation
 

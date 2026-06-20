@@ -1,0 +1,29 @@
+name: dustjacket README check
+description: Fail when a repository's README has drifted from the code (broken links, stale metadata, missing sections).
+branding:
+  icon: book-open
+  color: blue
+
+inputs:
+  readme:
+    description: Path to the README to check.
+    default: README.md
+  threshold:
+    description: Minimum severity that fails the job — "warning" or "error".
+    default: error
+  check-urls:
+    description: Also HEAD external URLs (network). "true" or "false".
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: Run dustjacket check
+      shell: bash
+      run: |
+        args=("${{ inputs.readme }}" --repo-root . --threshold "${{ inputs.threshold }}")
+        if [ "${{ inputs.check-urls }}" = "true" ]; then args+=(--check-urls); fi
+        python "${{ github.action_path }}/scripts/dustjacket_check.py" "${args[@]}"

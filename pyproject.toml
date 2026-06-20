@@ -1,3 +1,6 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.semantic_release]
 version_variables = [".claude-plugin/plugin.json:version"]
 tag_format = "v{version}"
