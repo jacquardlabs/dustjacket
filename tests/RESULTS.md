@@ -58,6 +58,29 @@ fresh agent generated a README from scratch for the sparse repo following `refer
 refusing to assert code output it couldn't run. Same no-fabrication discipline as prettify, on the mode
 most likely to violate it.
 
+## Fixture 4 — format axis: same repo, two formats (M5)
+
+Tests the **format axis** — the whole point of M5. Two fresh agents wrote a README for the same fixture
+(`tests/fixtures/format-demo`, a `tokenbucket` library), one in `reference` format, one in `landing`.
+The outputs are structurally different, not just differently worded:
+
+| Aspect | `reference` | `landing` |
+|--------|-------------|-----------|
+| Opens with | a table of contents | a tagline + badge cluster |
+| Emoji | none | section markers (`✦ ⚡ 📖 📦`) |
+| Centerpiece | one API table per method + an Algorithm section + back-to-top links | a benefit/feature grid + hero image (flagged) |
+| Voice | reference-manual | product |
+| Length | long, exhaustive | medium, scannable |
+
+Both obeyed the discipline: each flagged the missing `LICENSE` file, the unconfirmed PyPI package, and
+missing CI as `> TODO:` and invented nothing. The `landing` agent explicitly declined "blazing-fast"
+and latency claims for lack of a benchmark, and flagged the hero image as a TODO rather than linking a
+missing asset. Emoji appeared only as structural section markers, never in prose.
+
+**Finding:** the format axis produces fundamentally different *layouts* on identical input — the thing
+the four near-identical voice samples could not show — while every format still passes anti-slop and
+no-fabrication.
+
 ## Conclusion
 
 - **#8 (no-fabrication):** verified against an adversarial fixture — the skill avoids fabrication the
@@ -69,5 +92,7 @@ most likely to violate it.
 - **check mode (M3):** the deterministic checker has 15 unit tests; it's dogfooded in CI on this repo's
   README, and the GitHub Action + pre-commit hook are exercised end-to-end (`pre-commit try-repo`, a CI
   `uses: ./` job).
+- **format axis (M5):** verified — `reference` and `landing` produce structurally different layouts on
+  one repo (Fixture 4); every format obeys anti-slop + no-fabrication.
 - **Follow-up:** full pressure-testing (combined pressures, 5+ reps per variant per the writing-skills
   methodology) is a fair next issue, not a v1 blocker.

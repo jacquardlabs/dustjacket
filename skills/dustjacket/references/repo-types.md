@@ -18,6 +18,21 @@ Inspect the repo (manifest, entrypoints, directory layout, existing README) and 
 | **plugin / skill** | `.claude-plugin/plugin.json`; `skills/*/SKILL.md`, `commands/*.md`, or `agents/*.md`; no binary, no frontend; distributed via a marketplace | an AI-agent plugin users install, not import or run |
 | **profile** | repo name equals the owner's username (`username/username`); README renders on the GitHub profile; little or no project code | it's a *person*, not a project |
 
+## Default format
+
+Each type maps to a default format (see `references/formats.md`). This is the starting point only; an
+explicit user-chosen format always overrides it.
+
+| Type | Default format |
+|------|----------------|
+| library / SDK | standard |
+| CLI | standard (with a demo) |
+| framework | landing |
+| product / app | landing |
+| content / awesome | reference |
+| plugin / skill | standard |
+| profile | personal (not one of the five project formats; see `references/generate.md`) |
+
 ## Procedure
 
 1. Gather signals: read the package manifest, list the top-level directories, check for a binary

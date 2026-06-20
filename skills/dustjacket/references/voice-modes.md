@@ -1,9 +1,10 @@
 # Voice modes
 
-Voice is the tone register. It's orthogonal to repo type — a library can be terse or warm. These four
-are **self-contained** (no external dependency). Default to `technical-writer`. Honor an explicit user
-choice; otherwise use the repo type's default voice (see `references/house-styles.md`) and say which you
-picked.
+Voice is the **tone** register, and only tone. It is orthogonal to **format** (the layout axis in
+`references/formats.md`): format sets structure, length, and emoji; voice never changes those. Any voice
+pairs with any format — "landing format, technical-writer voice" is valid. These four are
+**self-contained** (no external dependency). Default to the chosen format's default voice
+(`references/formats.md`); honor an explicit user choice; say which you picked.
 
 **Every voice obeys `references/anti-slop.md`.** Voice changes register, never the ban list. `product`
 is not permission to write "powerful, seamless" — it's permission to lead with a benefit and a hero
@@ -29,5 +30,5 @@ All four are specific and slop-free. They differ in warmth and depth, not in hon
 ## Picking and stating the voice
 
 1. If the user named a voice, use it.
-2. Else use the repo type's default from `references/house-styles.md`.
-3. Tell the user: "Using **<voice>** voice (the default for a <type> repo). Say the word to switch."
+2. Else use the chosen format's default voice (`references/formats.md`).
+3. Tell the user: "Using **<voice>** voice (the default for the <format> format). Say the word to switch."

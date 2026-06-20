@@ -16,12 +16,14 @@ Every README, regardless of type, is built on this order:
 7. **Contributing**
 8. **License** (mandatory)
 
-Then overlay the type's ordering and devices from `references/house-styles.md`. Examples:
-- **library** → move a real code example to right after the description (usage-forward), add API.
-- **CLI** → feature tour with proof (screenshot/GIF/benchmark) before install; collapse install in
-  `<details>`.
-- **product** → hero header, screenshot, community sections.
-- **content** → TOC right after the intro; back-to-top links; consistent entry shape.
+This spine is the underlying consensus. The **chosen format owns the actual section ordering and length**
+(`references/formats.md`); the repo type supplies the *devices* to fill it (`references/house-styles.md`).
+Apply the format's ordering, then pull the type's devices. Examples:
+- **library + standard** → code example right after the description (usage-forward), add API.
+- **CLI + standard** → feature tour with proof (screenshot/GIF/benchmark) before install; collapse
+  install in `<details>`.
+- **product + landing** → hero header, screenshot, community sections.
+- **content + reference** → TOC right after the intro; back-to-top links; consistent entry shape.
 
 ## Procedure
 
@@ -29,7 +31,8 @@ Then overlay the type's ordering and devices from `references/house-styles.md`. 
    block. This inventory is what you're allowed to keep.
 2. **Map to the skeleton.** Place each real piece into the right skeleton slot. Merge duplicates. Drop
    pure filler (a "Features" section that's all empty adjectives → fold real items into a tight list).
-3. **Reorder to the house style.** Apply the type's ordering and signature devices.
+3. **Reorder to the chosen format.** Apply the format's section ordering (`references/formats.md`); pull
+   the type's signature devices from `references/house-styles.md`.
 4. **Fill structural gaps with TODOs,** never fiction. Missing License/Install/one-liner → flag.
 5. **Rewrite each line through `references/anti-slop.md`.**
 6. **Apply helpers within the toggles** (`references/helpers.md`, `references/toggles.md`).
