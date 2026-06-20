@@ -73,10 +73,15 @@ def first_paragraph(md: str) -> str:
     """The first non-heading, non-blank, non-badge line — the one-line description."""
     for raw in md.splitlines():
         line = raw.strip()
-        if not line or line.startswith("#") or line.startswith("![") or line.startswith(">"):
+        if not line or line.startswith("#") or line.startswith(">"):
             continue
-        if re.fullmatch(r"[\[\]!()\s|/:.\w-]*", line) and "http" in line and "](" in line:
-            continue  # a badge-only line
+        # Skip lines that are only markdown links/images and separators (badge/nav rows).
+        # Remove images first, then links — handles nested [![alt](img)](href) badges.
+        residue = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", line)
+        residue = re.sub(r"\[[^\]]*\]\([^)]*\)", "", residue)
+        residue = re.sub(r"[\s•·|—–-]", "", residue)
+        if not residue:
+            continue
         return line
     return ""
 

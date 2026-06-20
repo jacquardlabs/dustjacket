@@ -22,3 +22,14 @@ jobs:
         run: pip install pytest && pytest -q
       - name: README drift check (dogfood)
         run: python scripts/dustjacket_check.py README.md --repo-root .
+
+  action:
+    name: action (end-to-end)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the local action against this repo's README
+        uses: ./
+        with:
+          readme: README.md
+          threshold: error

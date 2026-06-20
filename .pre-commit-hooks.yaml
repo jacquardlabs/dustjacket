@@ -1,7 +1,7 @@
 - id: dustjacket-check
   name: dustjacket README drift check
   description: Fail the commit when README.md has drifted from the code.
-  entry: python scripts/dustjacket_check.py
-  language: python
+  entry: scripts/dustjacket_check.py
+  language: script
   files: ^README\.md$
   pass_filenames: false

@@ -31,6 +31,12 @@ def test_first_paragraph_skips_badges_and_headings():
     assert dc.first_paragraph(md) == "The real one-liner."
 
 
+def test_first_paragraph_skips_badge_with_query_params():
+    # shields badges carry ?query=params — the old char-class regex let these through
+    md = "# T\n\n[![v](https://img.shields.io/crates/v/bat.svg?colorB=319e8c)](https://x)\n\nReal desc.\n"
+    assert dc.first_paragraph(md) == "Real desc."
+
+
 # --- checks --------------------------------------------------------------------
 
 
