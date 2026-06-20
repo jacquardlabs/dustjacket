@@ -1,0 +1,17 @@
+{
+  "name": "dustjacket",
+  "description": "A Claude Code skill that restyles, generates, and drift-checks READMEs in their repo type's house style and a chosen voice — without fabricating anything.",
+  "version": "0.0.0",
+  "author": {
+    "name": "Jacquard Labs"
+  },
+  "repository": "https://github.com/jacquardlabs/dustjacket",
+  "license": "MIT",
+  "keywords": [
+    "readme",
+    "documentation",
+    "markdown",
+    "technical-writing",
+    "drift-check"
+  ]
+}
