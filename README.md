@@ -106,6 +106,20 @@ Token-bucket rate limiter for Python.
 - [Usage](#usage)
 - [API](#api)
 
+## Install
+
+    pip install tokenbucket
+
+**[⬆ back to top](#contents)**
+
+## Usage
+
+    from tokenbucket import TokenBucket
+    bucket = TokenBucket(rate=10, capacity=50)
+    bucket.take(n=1)
+
+**[⬆ back to top](#contents)**
+
 ## API
 
 ### take(n=1) -> bool
