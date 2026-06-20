@@ -7,17 +7,21 @@ interview the user for the rest.
 
 ## Procedure
 
-1. **Detect the type** (`references/repo-types.md`) and pick a voice (`references/voice-modes.md`).
-2. **Gather real signals:**
+1. **Detect the type** (`references/repo-types.md`).
+2. **Choose the format** — default from the repo type, honor an explicit user request, state the choice
+   (`references/formats.md`). Then **pick a voice** (the format's default, or the user's;
+   `references/voice-modes.md`).
+3. **Gather real signals:**
    - Manifest: name, version, description, license, entry points, dependencies.
    - Code: the public API / commands / exported symbols; `examples/` and `tests/` for real usage.
    - Files: LICENSE, CI workflows (for badges), existing docs, `.env.example` for config.
-3. **Lay down the type's skeleton** (`references/house-styles.md`) and fill each slot from signals.
-4. **Pull a usage example from real code** and verify its output (`references/verify-code.md`).
-5. **Interview for genuine gaps** — ask the user the few things the repo can't tell you (the one-line
+4. **Lay down the chosen format's section ordering** (`references/formats.md`), using the type's devices
+   (`references/house-styles.md`), and fill each slot from signals.
+5. **Pull a usage example from real code** and verify its output (`references/verify-code.md`).
+6. **Interview for genuine gaps** — ask the user the few things the repo can't tell you (the one-line
    pitch, the intended audience, the roadmap). Keep it to 2–4 questions; don't interrogate.
-6. **TODO whatever remains** — a slot with no signal and no answer becomes a flagged TODO, never filler.
-7. **Output:** write the new README. If one already exists (a stub), use the diff-and-approve contract
+7. **TODO whatever remains** — a slot with no signal and no answer becomes a flagged TODO, never filler.
+8. **Output:** write the new README. If one already exists (a stub), use the diff-and-approve contract
    (`references/output.md`); for a truly absent README, write it and summarize what you flagged.
 
 ## Interview, don't invent

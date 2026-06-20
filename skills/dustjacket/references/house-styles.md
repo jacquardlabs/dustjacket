@@ -24,7 +24,7 @@ matches the detected type. The cross-type rules at the bottom hold for every typ
 - **Signature devices:** prove it *in the terminal* — demo GIF (VHS), screenshots, or benchmark
   tables; `<details>` to collapse per-OS install matrices; GitHub callouts (`> [!NOTE]`); tables that
   teach the command language; an honest "why not use this" section.
-- **Default voice:** `technical-writer` (or `reference-manual` for tools whose README is the docs).
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** zero, or systematic heading emoji — never sprinkled in prose.
 
 ## Library / SDK
@@ -38,7 +38,7 @@ matches the detected type. The cross-type rules at the bottom hold for every typ
   one sentence so it reads as proof; show the payoff inline (a REPL transcript with real return values,
   or output comments showing the transformation); number-bearing feature bullets; comparison tables
   only when positioning against rivals. Minimal visuals — there's nothing to screenshot.
-- **Default voice:** `technical-writer`.
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** none to sparse. The README is a doorway — link out to full docs.
 
 ## Framework
@@ -49,7 +49,7 @@ matches the detected type. The cross-type rules at the bottom hold for every typ
 - **Skeleton:** banner → what/why → install → docs → contributing → packages directory → sponsors.
 - **Signature devices:** a monorepo directory table with inline per-package version badges (a
   self-updating release dashboard); theme-aware `<picture>` header; docs/community/sponsors sections.
-- **Default voice:** `friendly-OSS` (warm, contributor-inviting) or `product`.
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** sparse.
 
 ## Product / app
@@ -62,7 +62,7 @@ matches the detected type. The cross-type rules at the bottom hold for every typ
 - **Signature devices:** theme-aware images (`<picture>` or `#gh-light-mode-only`); a product
   screenshot (and occasional GIF in `<kbd>`); curated badge clusters with *unified* styling; tables
   doing structural marketing (capability matrix, one-click-deploy grid); community/commerce sections.
-- **Default voice:** `product`.
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** sparse and structural (bullet icons, table dividers) — never through prose.
 
 ## Content / awesome / educational
@@ -77,8 +77,7 @@ The defining problem is **navigation across hundreds of lines.**
   section once the doc is long (`**[⬆ back to top](#...)**`); parallel fixed-shape entries
   (`[Name](url) - one line.`) or fixed-column tables; `<details>` to collapse noisy metadata; nest
   multi-part series under an unlinked parent.
-- **Default voice:** `reference-manual` (terse) — or a short human hook (a one-paragraph testimonial),
-  never middling throat-clearing.
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** austere; functional markers only (e.g., the `⬆` back-to-top arrow).
 
 ## Plugin / skill (Claude Code & agent plugins)
@@ -94,7 +93,7 @@ install-and-use library README — the value is what the plugin *does for the ag
   contributing → license.
 - **Signature devices:** a table listing each command/skill with its trigger and one-line job; a short
   "what it does" list of real capabilities; install as copy-paste slash commands.
-- **Default voice:** `technical-writer`.
+- **Default voice:** set by the chosen format (`references/formats.md`).
 - **Emoji:** off or sparse. No screenshots, no API code blocks — show the commands instead.
 
 ---

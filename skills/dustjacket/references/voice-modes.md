@@ -30,5 +30,5 @@ All four are specific and slop-free. They differ in warmth and depth, not in hon
 ## Picking and stating the voice
 
 1. If the user named a voice, use it.
-2. Else use the repo type's default from `references/house-styles.md`.
-3. Tell the user: "Using **<voice>** voice (the default for a <type> repo). Say the word to switch."
+2. Else use the chosen format's default voice (`references/formats.md`).
+3. Tell the user: "Using **<voice>** voice (the default for the <format> format). Say the word to switch."

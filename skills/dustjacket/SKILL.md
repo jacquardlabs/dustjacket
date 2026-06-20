@@ -28,7 +28,7 @@ If the user only wants a quick edit to one line, just make the edit — don't ru
 
 | Mode | Job | How |
 |------|-----|-----|
-| `prettify` | Restyle an existing README to its repo-type house style and a chosen voice | the workflow below |
+| `prettify` | Restyle an existing README to a chosen format and voice | the workflow below |
 | `check` | Read-only drift gate; fails when the README no longer matches reality | `references/check.md` |
 | `generate` | Build a README from repo signals, interviewing for gaps | `references/generate.md` |
 

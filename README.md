@@ -1,7 +1,7 @@
 # dustjacket
 
-A Claude Code skill that restyles a repository's README to its repo-type house style and a chosen
-voice, without fabricating anything.
+A Claude Code skill that restyles a repository's README to a chosen format and voice, without
+fabricating anything.
 
 > **Status:** all three modes are implemented: prettify, check, and generate.
 
@@ -33,10 +33,154 @@ dustjacket default from the repo type and override when you want a different pre
 | `tutorial` | "Getting started" | light, structural | medium-long | onboarding-focused projects |
 | `landing` | a hero image | structural | medium | products, frameworks |
 
-Same library, opposite ends: a `reference` README opens with a table of contents and documents every
-option in tables with no emoji; a `landing` README for that same library opens with a theme-aware hero
-image and a badge cluster, leads with a benefit grid, and uses section-marker emoji. Voice is layered on
-top and changes wording only, never the layout.
+The same project (`tokenbucket`, a rate limiter) in each format. Voice is layered on top and changes
+wording only, never the layout.
+
+<details>
+<summary><code>minimal</code></summary>
+
+```markdown
+# tokenbucket
+
+A token-bucket rate limiter for Python.
+
+## Install
+
+    pip install tokenbucket
+
+## Usage
+
+    from tokenbucket import TokenBucket
+    bucket = TokenBucket(rate=10, capacity=50)
+    bucket.take()  # True if a token was available
+
+## License
+
+MIT
+```
+</details>
+
+<details>
+<summary><code>standard</code></summary>
+
+```markdown
+# tokenbucket
+
+A token-bucket rate limiter for Python. Zero dependencies, Python 3.9+.
+
+## Install
+
+    pip install tokenbucket
+
+## Usage
+
+    from tokenbucket import TokenBucket
+    bucket = TokenBucket(rate=10, capacity=50)
+    if bucket.take():
+        ...  # allowed
+
+## API
+
+`TokenBucket(rate, capacity)` and `take(n=1) -> bool`.
+
+## Contributing
+
+See CONTRIBUTING.md.
+
+## License
+
+MIT
+```
+</details>
+
+<details>
+<summary><code>reference</code></summary>
+
+```markdown
+# tokenbucket
+
+Token-bucket rate limiter for Python.
+
+## Contents
+- [Install](#install)
+- [Usage](#usage)
+- [API](#api)
+
+## API
+
+### take(n=1) -> bool
+
+| Param | Type | Default | Description |
+|-------|------|---------|-------------|
+| n     | int  | 1       | Tokens to consume |
+
+Returns True if n tokens were available and consumed, else False.
+
+**[⬆ back to top](#contents)**
+
+## License
+
+MIT
+```
+</details>
+
+<details>
+<summary><code>tutorial</code></summary>
+
+```markdown
+# tokenbucket
+
+Rate-limit a function in three steps.
+
+## ✦ Getting started
+
+1. Install it:
+
+        pip install tokenbucket
+
+2. Create a bucket: 10 tokens/sec, burst of 50.
+
+        bucket = TokenBucket(rate=10, capacity=50)
+
+3. Gate each call:
+
+        if bucket.take():
+            handle(request)
+
+## License
+
+MIT
+```
+</details>
+
+<details>
+<summary><code>landing</code></summary>
+
+```markdown
+<p align="center"><img src="docs/assets/logo.png" alt="tokenbucket logo"></p>
+
+# tokenbucket
+
+Rate-limit any call to a steady rate, with bursts.
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
+
+## ✦ Why tokenbucket
+
+| | |
+|---|---|
+| **Zero dependencies** | Pure stdlib. |
+| **Monotonic clock** | Clock changes never corrupt the bucket. |
+
+## ⚡ Quick start
+
+    pip install tokenbucket
+
+## License
+
+MIT
+```
+</details>
 
 ## Install
 
