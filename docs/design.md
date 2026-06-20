@@ -115,7 +115,7 @@ Low-risk, high-leverage generators (no fabrication risk):
 
 ## Asset coaching & scaffolding
 
-The research's highest-leverage devices — theme-aware screenshots, demo GIFs, REPL transcripts — are
+The research's highest-leverage devices (theme-aware screenshots, demo GIFs, REPL transcripts) are
 exactly the things the skill *must not fabricate*. So split assets three ways by what the skill can
 honestly do:
 

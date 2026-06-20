@@ -85,6 +85,22 @@ def test_metadata_mismatch_warns(tmp_path: Path):
     assert any("license" in f.message.lower() for f in findings)
 
 
+def test_em_dash_double_on_a_line_warns():
+    md = "# T\n\nDetects the type — CLI, library — and applies the style.\n"
+    findings = dc.check_em_dashes(md)
+    assert len(findings) == 1 and findings[0].severity == "warning" and findings[0].check == "em-dash"
+
+
+def test_em_dash_single_is_fine():
+    md = "# T\n\nAn HTTP client for Python — with retries built in.\n"
+    assert dc.check_em_dashes(md) == []
+
+
+def test_em_dash_ignored_in_code_block():
+    md = "# T\n\n```\nx = a — b — c  # in code, exempt\n```\n"
+    assert dc.check_em_dashes(md) == []
+
+
 def test_metadata_match_passes(tmp_path: Path):
     (tmp_path / "pyproject.toml").write_text(
         '[project]\nname = "tool"\nlicense = { text = "MIT" }\n'
