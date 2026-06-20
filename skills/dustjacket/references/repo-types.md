@@ -16,6 +16,7 @@ Inspect the repo (manifest, entrypoints, directory layout, existing README) and 
 | **product / app** | Dockerfile + a frontend (`app/`, `web/`, framework config); a hosted/deployed offering; env config for a running service; screenshots in the README | users *run or sign up for* a UI |
 | **content / awesome** | README/markdown is the deliverable; `awesome-*` name; mostly curated lists or tutorials; little or no executable code | the README *is* the product |
 | **plugin / skill** | `.claude-plugin/plugin.json`; `skills/*/SKILL.md`, `commands/*.md`, or `agents/*.md`; no binary, no frontend; distributed via a marketplace | an AI-agent plugin users install, not import or run |
+| **profile** | repo name equals the owner's username (`username/username`); README renders on the GitHub profile; little or no project code | it's a *person*, not a project |
 
 ## Procedure
 
@@ -32,5 +33,5 @@ Inspect the repo (manifest, entrypoints, directory layout, existing README) and 
   both a code example *and* a run example; default to library style if the API is the headline.
 - **Framework vs product** — if there's a hosted product *and* an open package set, ask which README
   this is (the product landing README differs from the framework package README).
-- **Profile README** (`username/username`) — a special type, deferred to a later milestone; if you hit
-  one, say so and fall back to a plain, personal structure rather than a project skeleton.
+- **Profile README** (`username/username`) — its own type; it's a personal page, not a project, so it
+  has no install/usage/license skeleton. Handle it with the profile flow in `references/generate.md`.
