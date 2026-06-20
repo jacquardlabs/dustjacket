@@ -123,4 +123,4 @@ table icons. No manual TOC (GitHub auto-generates one); prose is badge-free and 
 
 ## License
 
-See [LICENSE](../../../LICENSE) (MIT).
+Distributed under the MIT License (see `LICENSE` at the repository root).
